@@ -48,10 +48,37 @@ def add_person():
 
 # Get danh sach nguoi
 @app.route('/person', methods=['GET'])
-def get_persons():
+def getPersons():
   all_persons = Person.query.all()
   result = persons_schema.dump(all_persons)
   return jsonify(result)
+
+#Get thong tin nguoi dung theo id
+@app.route('/person/<id>',methods=['GET'])
+def getPersonById(id):
+      person = Person.query.get(id)
+      return person_schema.jsonify(person)
+
+#sua thong tin nguoi dung
+@app.route('/person/<id>',methods=['PUT'])
+def updatePersonById(id):
+      person = Person.query.get(id)
+      
+      person.name = request.json['name']
+      person.address = request.json['address']
+      person.height = request.json['height']
+      person.weight = request.json['weight']
+        
+      db.session.commit()
+      return person_schema.jsonify(person)
+
+#Xoa nguoi dung theo id
+@app.route('/person/<id>',methods=['DELETE'])
+def deletePersonById(id):
+      person = Person.query.get(id)
+      db.session.delete(person)
+      db.session.commit()
+      return person_schema.jsonify(person)
 
 
 if __name__ == '__main__':
