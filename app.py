@@ -80,7 +80,7 @@ def deletePersonById(id):
       db.session.commit()
       return person_schema.jsonify(person)
 
-
+#Get chi so BMI
 @app.route('/bmi/<id>',methods=['GET'])
 def getBmiPersonById(id):
       person=Person.query.get(id)
