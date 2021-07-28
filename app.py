@@ -81,5 +81,25 @@ def deletePersonById(id):
       return person_schema.jsonify(person)
 
 
+@app.route('/bmi/<id>',methods=['GET'])
+def getBmiPersonById(id):
+      person=Person.query.get(id)
+      
+      bmi= round(((person.weight)/(person.height *2)),2)
+      mess=''
+      if bmi < 18.5:
+            mess='Can nang thap'
+      elif  (bmi>=18.5 and bmi<=24.9):
+            mess='Binh thuong'
+      elif  (bmi==25):
+            mess='Thua can'
+      elif  (bmi>25 and bmi<29.9) : 
+            mess='Beo phi'
+      else:
+            mess='Qua beo'
+      return jsonify({"Ho va ten" : person.name,
+                      "Chi so BMI": bmi,
+                      "mess"      : mess})
+
 if __name__ == '__main__':
   app.run(debug=True)
