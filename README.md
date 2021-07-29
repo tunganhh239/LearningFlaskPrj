@@ -1,6 +1,6 @@
 # LearningFlaskPrj
 
-##Danh sách thông tin người dùng
+## Danh sách thông tin người dùng
 **URL** : `/person`
 **Method** : `GET`
 
