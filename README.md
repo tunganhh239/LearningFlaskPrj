@@ -1,6 +1,6 @@
 # LearningFlaskPrj
 
-## Danh sách thông tin người dùng
+### Danh sách thông tin người dùng
 
 **URL** : `/person`
 
@@ -9,14 +9,73 @@
 **Data**
 
 ```json
-[{"address":"Hai Phong","height":1.7,"id":1,"name":"Khoa","weight":70.0},{"address":"Lai Chau","height":1.54,"id":3,"name":"My","weight":50.0},{"address":"Ninh Thuan","height":1.69,"id":6,"name":"Trung","weight":75.0}]
+[
+    {
+        "id"        :   1,
+        "name"      :   "Khoa",
+        "address"   :   "Hai Phong",
+        "height"    :   1.7,
+        "weight"    :   70.0
+    },
+    {
+        "id"        :   2,
+        "name"      :   "Tung Anh",
+        "address"   :   "Ha Noi",
+        "height"    :   1.76,
+        "weight"    :   75.0
+    },
+    {
+        "id"        :   3,
+        "name"      :   "Viet Anh",
+        "address"   :   "Da Nang",
+        "height"    :   1.7,
+        "weight"    :   65.0
+    }
+]
 ```
 
-## Get thông tin người dùng theo id
+### Get thông tin người dùng theo id
 
 **URL** : `/person/<id>`
 
 **Method** : `GET`
+
+**Data**
+
+```json
+{
+    "id":1,
+    "name": "TungAnh",
+    "address": "Ha Noi",
+    "weight": 75,
+    "height:: 1.76
+}
+```
+
+### Get chỉ số BMI của người dùng theo id
+
+**URL** : `/bmi/<id>`
+
+**Method** : `GET`
+
+**Data**
+
+```json
+{
+    "id":1,
+    "name": "TungAnh",
+    "BMI": 20.59,
+    "messs": "Binh thuong"
+}
+```
+
+
+
+### Thêm thông tin người dùng theo id
+
+**URL** : `/person/<id>`
+
+**Method** : `POST`
 
 **Data**
 
@@ -28,3 +87,21 @@
     "height:: 1.76
 }
 ```
+
+
+### Sửa thông tin người dùng theo id
+
+**URL** : `/person/<id>`
+
+**Method** : `PUT`
+
+
+### Xóa thông tin người dùng theo id
+
+**URL** : `/person/<id>`
+
+**Method** : `DELETE`
+
+
+
+
