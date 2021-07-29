@@ -97,8 +97,8 @@ def getBmiPersonById(id):
             mess='Beo phi'
       else:
             mess='Qua beo'
-      return jsonify({"Ho va ten" : person.name,
-                      "Chi so BMI": bmi,
+      return jsonify({"Name" : person.name,
+                      "BMI": bmi,
                       "mess"      : mess})
 
 if __name__ == '__main__':
