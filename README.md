@@ -1,4 +1,4 @@
-# LearningFlaskPrj
+# quản lý và theo dõi chỉ số BMI của người dùng
 
 ### Danh sách thông tin người dùng
 
