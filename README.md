@@ -10,9 +10,10 @@
 {
     "name": "TungAnh",
     "address": "Ha Noi",
-    "weight": "75",
-    "height:: "1.76"
+    "weight": 75,
+    "height:: 1.76
 }
+```
 ## Success Response
 
 **Code** : `200 OK`
